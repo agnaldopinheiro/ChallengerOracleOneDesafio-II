@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head> 
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Jogo da Forca 2022</title>
+		<link rel="stylesheet" href="reset.css">
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
+	</head>
+
+	<header>
+
+      	<a href="https://www.alura.com.br/oracle-next-education"><img src="img/Logo.png" class="logo" id="alura" ></a>
+        <h1 class="titulo">Jogo da Forca</h1>
+     
+    </header>
+
+	<body background="img/halloween.jpg">
+
+		<main>
+			
+			<div class="desenho">
+				
+				<h1><img class="forca" id="imagem" src="img/forcacaveira4.png"></h1>
+
+				<div class="resultaErros">
+				</div>
+
+				<div class="adicionaPalavra" id="telaAdiciona">
+			    	<div>
+			    		<p>Insira uma palavra e dica</p>
+			        	<label for="palavra">Palavra:</label>
+			        	<input type="text" id="palavra" name="palavra" placeholder="exemplo: futebol">
+			        </div>
+			        <div>
+			          <label for="dica">Dica:</label>
+			          <input type="text" id="dica" name="dica" placeholder="exemplo: Tipo de esporte">
+			        </div>
+			        <input type="button" value="Inserir nova palavra" class="botao3" onclick="NovaPalavra()">
+			        <input type="button" value="Sair" class="botao3" onclick="jogarForca()">
+      			</div>
+
+			</div>
+			
+			<div class="palavraSecreta">
+				
+				<h2 class="letrajogada" id="inicial">Coragem, venha jogar!</h2>
+								
+			</div>
+			
+			<div class="desenho">
+				<h1 class="titulo2" id ="texdica"></h1>	
+			</div>
+
+			<div class="container" id="teclas">
+				<button class="teclado" value="Q">Q</button>
+				<button class="teclado" value="W">W</button>
+				<button class="teclado" value="E">E</button>
+				<button class="teclado" value="R">R</button>
+				<button class="teclado" value="T">T</button>
+				<button class="teclado" value="Y">Y</button>
+				<button class="teclado" value="U">U</button>
+				<button class="teclado" value="I">I</button>
+				<button class="teclado" value="O">O</button>
+				<button class="teclado" value="P">P</button>
+			</div>
+			<div class="container" id="teclas">
+				<button class="teclado" value="A">A</button>
+				<button class="teclado" value="S">S</button>
+				<button class="teclado" value="D">D</button>
+				<button class="teclado" value="F">F</button>
+				<button class="teclado" value="G">G</button>
+				<button class="teclado" value="H">H</button>
+				<button class="teclado" value="J">J</button>
+				<button class="teclado" value="K">K</button>
+				<button class="teclado" value="L">L</button>
+				<button class="teclado" value="Ç">Ç</button>
+			</div>
+			<div class="container" id="teclas">
+				<button class="teclado" value="Z">Z</button>
+				<button class="teclado" value="X">X</button>
+				<button class="teclado" value="C">C</button>
+				<button class="teclado" value="V">V</button>
+				<button class="teclado" value="B">B</button>
+				<button class="teclado" value="N">N</button>
+				<button class="teclado" value="M">M</button>
+			</div>
+
+			<div class="container">
+				<input type="button" value="Jogar" id="jogar" class="botao2" onclick="inicializar()">
+				<input type="button" value="Inserir Palavra" class="botao2" onclick="inserirPalavra()">
+			</div>
+
+		</main>
+	<script src="principal.js"></script>
+	</body>
+
+	<footer>
+		
+		<a href="https://pixabay.com/images/id-6749878/">Imagem</a>
+		<a href="https://github.com/agnaldopinheiro/ChallengerOracleOneDesafio-II.git"><img src="img/github.png" class="logorodape"></a>
+		<a href="https://www.instagram.com/?hl=pt-br"><img src="img/insta.png" class="logorodape"></a>
+		<a href="https://www.linkedin.com/in/"><img src="img/linkedin.png" class="logorodape"></a>
+		<p class="copyright">&copy; Alura - Oracle Next Education by Agnaldo Pinheiro - 2022</p>
+
+	</footer>
+
+</html>

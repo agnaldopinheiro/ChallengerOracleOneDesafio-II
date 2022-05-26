@@ -1,0 +1,219 @@
+body {
+
+	
+	font-family: 'Montserrat', sans-serif;
+	
+}
+
+header {
+	display: flex;
+	column-gap: 60px;
+	background-color: #fca74d;
+	height: 70px;
+
+}
+
+.logo {
+	padding: 10px 10px			
+}
+.titulo {
+	color: white;
+	padding: 20px;
+	font-weight: bold;
+	font-size: 40px;
+ 
+} 
+
+.titulo2 {
+	color: white;
+	padding: 10px;
+	font-weight: bold;
+	font-size: 25px;
+
+} 
+
+.desenho {
+	display: flex;
+	flex-direction: row;
+  	justify-content: center;
+  	align-items: center;
+  	flex-wrap: wrap;
+  	align-content: center;
+	
+}
+
+.forca {
+	padding: 10px;
+	width: 400px;
+  	height: 400px;
+  	object-fit: contain;
+}
+
+.erros {
+
+	display: flex;
+  	flex-direction: column;
+  	justify-content: center;
+  	align-items: center;
+  	flex-wrap: wrap;
+  	align-content: center;
+  	row-gap: 10px;
+  	column-gap: 5px;
+  	margin: 10px;
+}
+
+.adicionaPalavra {
+
+	display: flex;
+  	flex-direction: column;
+  	align-items: right;
+  	flex-wrap: wrap;
+  	background-color: orange;
+  	row-gap: 10px;
+  	column-gap: 5px;
+  	margin: 10px;
+  	padding: 10px;
+
+}
+
+
+
+.resultaErros {
+
+	display: flex;
+  	flex-direction: column;
+  	justify-content: center;
+  	align-items: center;
+  	flex-wrap: wrap;
+  	align-content: center;
+  	row-gap: 10px;
+  	column-gap: 5px;
+  	margin: 10px;
+}
+
+
+.teclado2 {
+	flex-direction: column;
+	background-color: orangered;
+	color: white;
+	height: 200px;
+	width: 200px;
+	text-align: center;
+	font-size: 25px;
+	border-color: orange;
+	/*font-family: 'Courier New', Courier, monospace;*/
+	border-radius: 6px;
+}
+
+.palavraSecreta {
+
+	display: flex;
+  	flex-direction: row;
+  	justify-content: center;
+  	align-items: center;
+  	flex-wrap: wrap;
+  	align-content: center;
+  	row-gap: 10px;
+  	column-gap: 5px;
+  	margin: 10px;
+}
+
+.letrajogada {
+
+	background-color: #423218;
+	color: white;
+	padding: 5PX 8PX;
+	text-align: center;
+	font-size: 30px;
+	font: bold;
+	border-color: black;
+	/*font-family: 'Courier New', Courier, monospace;*/
+	border-radius: 6px;
+}
+.letrasErradas {
+	background-color: #423218;
+	color: white;
+	padding: 5PX 8PX;
+	text-align: center;
+	font-size: 30px;
+	font: bold;
+	border-color: black;
+	/*font-family: 'Courier New', Courier, monospace;*/
+	border-radius: 6px;
+}
+
+
+.container {
+	display: flex;
+  	flex-direction: row;
+  	justify-content: center;
+  	align-items: center;
+  	flex-wrap: wrap;
+  	align-content: center;
+  	row-gap: 10px;
+  	column-gap: 5px;
+  	margin: 10px;
+
+}
+
+.teclado {
+
+	background-color: orangered;
+	color: white;
+	height: 40px;
+	width: 40px;
+	text-align: center;
+	font-size: 25px;
+	border-color: orange;
+	/*font-family: 'Courier New', Courier, monospace;*/
+	border-radius: 6px;
+	}
+
+.botao2 {
+
+	background-color: #423218;
+	color: white;
+	height: 40px;
+	width: 160px;
+	text-align: center;
+	font-size: 22px;
+	border-color: indianred;
+	/*font-family: 'Courier New', Courier, monospace;*/
+	border-radius: 6px;
+	}
+
+.adicionaPalavra {
+
+	font-size: 28px;
+
+}
+
+.botao3 {
+
+	background-color: orangered;
+	color: white;
+	height: 40px;
+	width: 220px;
+	text-align: center;
+	font-size: 22px;
+	border-color: #fca74d;
+	/*font-family: 'Courier New', Courier, monospace;*/
+	border-radius: 6px;
+	}
+
+footer {
+	display: flex;
+	column-gap: 60px;
+	background-color: orange;
+	height: 45px;
+	justify-content: center;
+	align-items: center;
+	padding-top: 20px 10px 20px;
+
+}
+
+.logorodape {
+
+	height: 30px;
+	width: 30px;
+}
