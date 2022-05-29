@@ -9,23 +9,22 @@
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
 	</head>
 
-	<header>
+	<body background="img/halloween.jpg">
+
+		<header>
 
       	<a href="https://www.alura.com.br/oracle-next-education"><img src="img/Logo.png" class="logo" id="alura" ></a>
         <h1 class="titulo">Jogo da Forca</h1>
      
-    </header>
-
-	<body background="img/halloween.jpg">
+    	</header>
 
 		<main>
 			
 			<div class="desenho">
 				
-				<h1><img class="forca" id="imagem" src="img/forcacaveira4.png"></h1>
+				<img class="forca" id="imagem" src="img/forcacaveira4.png">
 
-				<div class="resultaErros">
-				</div>
+				<div class="resultaErros"></div>
 
 				<div class="adicionaPalavra" id="telaAdiciona">
 			    	<div>
@@ -41,6 +40,11 @@
 			        <input type="button" value="Sair" class="botao3" onclick="jogarForca()">
       			</div>
 
+      			<div class="mostraResultadoFinal" id="ResFinal">
+      				<div id="Resultado"></div>
+      				<input type="button" value="Jogue mais!" class="botao2" onclick="inicializar()">
+      			</div>
+      			
 			</div>
 			
 			<div class="palavraSecreta">
@@ -93,17 +97,17 @@
 			</div>
 
 		</main>
-	<script src="principal.js"></script>
+
+		<footer>
+			
+			<a href="https://pixabay.com/images/id-6749878/">Imagem</a>
+			<a href="https://github.com/agnaldopinheiro/ChallengerOracleOneDesafio-II.git"><img src="img/github.png" class="logorodape"></a>
+			<a href="https://www.instagram.com/agnaldo_data/"><img src="img/insta.png" class="logorodape"></a>
+			<a href=https://www.linkedin.com/in/agnaldo-pinheiro-9714841b2/><img src="img/linkedin.png" class="logorodape"></a>
+			<p class="copyright">&copy; Alura - Oracle Next Education by Agnaldo Pinheiro - 2022</p>
+
+		</footer>
+		<script src="principal.js"></script>
 	</body>
-
-	<footer>
-		
-		<a href="https://pixabay.com/images/id-6749878/">Imagem</a>
-		<a href="https://github.com/agnaldopinheiro/ChallengerOracleOneDesafio-II.git"><img src="img/github.png" class="logorodape"></a>
-		<a href="https://www.instagram.com/?hl=pt-br"><img src="img/insta.png" class="logorodape"></a>
-		<a href="https://www.linkedin.com/in/"><img src="img/linkedin.png" class="logorodape"></a>
-		<p class="copyright">&copy; Alura - Oracle Next Education by Agnaldo Pinheiro - 2022</p>
-
-	</footer>
 
 </html>

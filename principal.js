@@ -30,8 +30,12 @@ var contaErros = 0
 var contaAcertos = 0
 var jogando = false
 let campoSegredo = []
+let ganhou = true
+let vitorias = 0
+let derrotas = 0
 var adicionandoPalavras = document.querySelector(".adicionaPalavra");
 document.getElementById("telaAdiciona").style.display = "none";
+document.getElementById("ResFinal").style.display = "none";
 
 	// Leitura do teclado da tela de jogo
 teclado = document.querySelectorAll(".teclado")
@@ -103,7 +107,7 @@ function jogarForca() {
 
 	document.getElementById("imagem").src = "img/forcacaveira4.png"
 	document.getElementById("telaAdiciona").style.display = "none";
-
+	document.getElementById("ResFinal").style.display = "none";
 	// apaga os traços 
 	var tabuleiro = document.querySelector(".palavraSecreta");
 	tabuleiro.textContent = ""
@@ -125,29 +129,35 @@ function jogarForca() {
 function verificaJogo() {
 	
 	if (contaErros >= 6) {
+		
+		ganhou = false;
+		derrotas = derrotas + 1
+		ResFinal()
 		// apaga os traços 
 		var tabuleiro = document.querySelector(".palavraSecreta");
 		tabuleiro.textContent = ""
 		
 		var h2 = document.createElement("h2");
 		h2.classList.add("letrajogada");
-		h2.textContent = palavraSorteada + " - Fim de Jogo! Tente outra vez!";
+		h2.textContent = palavraSorteada;
 		
 		var div = document.querySelector(".palavraSecreta");
 		div.appendChild(h2);
-
 		document.getElementById("imagem").src = "img/forcacaveira10b.png"
 
-	jogando = false;
+		jogando = false;
 	}
 
 	if ((contaAcertos) == tamanhodaPalavra){
 		
-		var h2 = document.createElement("h2");
+		vitorias = vitorias + 1
+		ganhou = true;
+		ResFinal(ganhou)
+		/*var h2 = document.createElement("h2");
 		h2.classList.add("titulo");
 		h2.textContent = "Parabéns. Você ganhou!!";
 		var div = document.querySelector(".palavraSecreta");
-		div.appendChild(h2);
+		div.appendChild(h2);*/
 
 		console.log("Você venceu. Parabéns!");
 		jogando = false;
@@ -190,6 +200,18 @@ function errouLetra(letraEntrada) {
 	h1.textContent = letraEntrada
 	var div = document.querySelector(".resultaErros")
 	div.appendChild(h1)
+}
+
+function ResFinal(){
+	console.log(ganhou)
+	document.getElementById("ResFinal").style.display = "flex";
+	var msg = document.querySelector("#Resultado")
+	if (ganhou == false) {
+		msg.textContent = "Fim de Jogo!" + " Vitorias: " + vitorias + " Derrotas: " + derrotas
+	} else {
+		msg.textContent = "Parabéns, você ganhou!" +  " Vitorias: " + vitorias + " Derrotas: " + derrotas
+		console.log("xi")
+	}
 }
 
 function sorteiaPalavra() {

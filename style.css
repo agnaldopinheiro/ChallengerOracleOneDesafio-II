@@ -1,16 +1,35 @@
 body {
-
 	
 	font-family: 'Montserrat', sans-serif;
-	
+	width: 100%;
+	height: 100vh;
 }
 
 header {
-	display: flex;
-	column-gap: 60px;
-	background-color: #fca74d;
-	height: 70px;
 
+	height: 7%;
+	width: 100%;
+	display: flex;
+	flex-wrap: 	nowrap;
+	background-color: #fca74d;	
+}
+
+main {
+	height: 87%;
+	width: 100%;
+}
+
+footer {
+
+	height: 6%;
+	display: flex;
+	font-weight: bold;
+	font-size: 20px;
+	flex-wrap: 	wrap;
+	column-gap: 30px;
+	background-color: orange;
+	justify-content: center;
+	align-items: center;	
 }
 
 .logo {
@@ -18,10 +37,9 @@ header {
 }
 .titulo {
 	color: white;
-	padding: 20px;
+	padding: 10px;
 	font-weight: bold;
 	font-size: 40px;
- 
 } 
 
 .titulo2 {
@@ -29,7 +47,6 @@ header {
 	padding: 10px;
 	font-weight: bold;
 	font-size: 25px;
-
 } 
 
 .desenho {
@@ -39,12 +56,12 @@ header {
   	align-items: center;
   	flex-wrap: wrap;
   	align-content: center;
-	
+  	font-weight: bold;
 }
 
 .forca {
 	padding: 10px;
-	width: 400px;
+	width: 240px;
   	height: 400px;
   	object-fit: contain;
 }
@@ -57,13 +74,12 @@ header {
   	align-items: center;
   	flex-wrap: wrap;
   	align-content: center;
-  	row-gap: 10px;
+  	row-gap: 5px;
   	column-gap: 5px;
-  	margin: 10px;
+  	margin: 5px;
 }
 
 .adicionaPalavra {
-
 	display: flex;
   	flex-direction: column;
   	align-items: right;
@@ -71,12 +87,28 @@ header {
   	background-color: orange;
   	row-gap: 10px;
   	column-gap: 5px;
-  	margin: 10px;
+  	margin: 5px;
   	padding: 10px;
-
 }
 
+#telaAdiciona{
+	font-size: 25px;
+}
 
+.mostraResultadoFinal {
+	display: flex;
+	font-size: 30px;
+	width: 200px;
+  	flex-direction: column;
+  	align-items: right;
+  	flex-wrap: wrap;
+  	background-color: orange;
+  	border:  2px solid;
+  	row-gap: 10px;
+  	column-gap: 5px;
+  	margin: 5px;
+  	padding: 10px;
+}
 
 .resultaErros {
 
@@ -88,7 +120,7 @@ header {
   	align-content: center;
   	row-gap: 10px;
   	column-gap: 5px;
-  	margin: 10px;
+  	margin: 5px;
 }
 
 
@@ -101,7 +133,6 @@ header {
 	text-align: center;
 	font-size: 25px;
 	border-color: orange;
-	/*font-family: 'Courier New', Courier, monospace;*/
 	border-radius: 6px;
 }
 
@@ -113,32 +144,28 @@ header {
   	align-items: center;
   	flex-wrap: wrap;
   	align-content: center;
-  	row-gap: 10px;
+  	row-gap: 5px;
   	column-gap: 5px;
-  	margin: 10px;
+  	margin: 5px;
 }
 
 .letrajogada {
 
 	background-color: #423218;
 	color: white;
-	padding: 5PX 8PX;
+	padding: 5px 8px;
 	text-align: center;
 	font-size: 30px;
-	font: bold;
-	border-color: black;
-	/*font-family: 'Courier New', Courier, monospace;*/
 	border-radius: 6px;
 }
+
 .letrasErradas {
 	background-color: #423218;
 	color: white;
 	padding: 5PX 8PX;
 	text-align: center;
-	font-size: 30px;
-	font: bold;
-	border-color: black;
-	/*font-family: 'Courier New', Courier, monospace;*/
+	font-size: 20px;
+	font-style: bold;
 	border-radius: 6px;
 }
 
@@ -150,10 +177,9 @@ header {
   	align-items: center;
   	flex-wrap: wrap;
   	align-content: center;
-  	row-gap: 10px;
+  	row-gap: 5px;
   	column-gap: 5px;
-  	margin: 10px;
-
+  	margin: 5px;
 }
 
 .teclado {
@@ -165,7 +191,6 @@ header {
 	text-align: center;
 	font-size: 25px;
 	border-color: orange;
-	/*font-family: 'Courier New', Courier, monospace;*/
 	border-radius: 6px;
 	}
 
@@ -178,15 +203,8 @@ header {
 	text-align: center;
 	font-size: 22px;
 	border-color: indianred;
-	/*font-family: 'Courier New', Courier, monospace;*/
 	border-radius: 6px;
 	}
-
-.adicionaPalavra {
-
-	font-size: 28px;
-
-}
 
 .botao3 {
 
@@ -195,25 +213,162 @@ header {
 	height: 40px;
 	width: 220px;
 	text-align: center;
-	font-size: 22px;
+	font-size: 30px;
 	border-color: #fca74d;
-	/*font-family: 'Courier New', Courier, monospace;*/
 	border-radius: 6px;
 	}
-
-footer {
-	display: flex;
-	column-gap: 60px;
-	background-color: orange;
-	height: 45px;
-	justify-content: center;
-	align-items: center;
-	padding-top: 20px 10px 20px;
-
-}
 
 .logorodape {
 
 	height: 30px;
 	width: 30px;
+}
+
+@media screen and (max-width: 480px) {
+	
+	body {	
+		background-size: 380%;
+		width: 100%;
+		height: 100vh;
+	}
+
+	header {
+		height: 6%;
+		display: flex;
+		column-gap: 25px;
+	}
+
+	main {
+		height: 87%;
+	}
+
+	footer {
+		font-size: 12px;
+		height: 6%;
+		display: flex;
+		flex-wrap: 	wrap;
+		column-gap: 10px;
+		padding-top: 5px 5px 5px;
+
+	}
+
+	.desenho {
+		width: 80%;
+		display: flex;
+		flex-direction: row;
+  		justify-content: center;
+  		align-items: center;
+  		flex-wrap: nowrap;
+  		align-content: center;	
+	}
+
+	.logo {
+		padding: 10px 10px	
+		width: 100%;
+	  	height: 50%;		
+	}
+
+	.titulo {
+		font-size: 20px;
+		padding: 20px;
+		width: 100%;
+	  	height: 20%;
+	} 
+
+	.titulo2 {
+		font-size: 16px;
+	}
+
+	.forca {
+		padding: 10px;
+		width: 65%;
+	  	height: 5%;
+	}
+
+	.erros {
+		display: flex;
+	  	row-gap: 10px;
+	  	column-gap: 5px;
+	  	margin: 5px;
+	}
+
+	.mostraResultadoFinal {
+		display: flex;
+		font-size: 20px;
+	}
+
+	.adicionaPalavra {
+
+		display: flex;
+	  	row-gap: 10px;
+	  	column-gap: 5px;
+	  	margin: 5px;
+	  	padding: 10px;
+	}
+
+	.teclado2 {
+
+		height: 200px;
+		width: 200px;
+		text-align: center;
+		font-size: 10px;
+		border-radius: 6px;
+	}
+
+	.letrajogada {
+		padding: 5px 8px;
+		text-align: center;
+		font-size: 20px;
+		font: bold;
+		border-color: black;
+		border-radius: 6px;
+	}
+	.letrasErradas {
+		padding: 5px 8px;
+		font-size: 10px;
+		border-radius: 6px;
+	}
+
+	.container {
+
+		display: flex;
+  		flex-direction: row;
+  		justify-content: center;
+  		align-items: center;
+  		flex-wrap: wrap;
+  		align-content: center;
+  		row-gap: 5px;
+  		column-gap: 5px;
+  		margin: 5px;
+	}
+
+	.teclado {
+		height: 26px;
+		width: 26px;
+		font-size: 16px;
+		border-radius: 4px;
+	}
+
+	.botao2 {
+		
+		border-radius: 6px;
+		font-size: 20px;
+	}
+
+	.adicionaPalavra {
+		font-size: 10px;
+	}
+
+	.botao3 {
+		height: 40px;
+		width: 220px;
+		font-size: 20px;
+		border-radius: 6px;
+	}
+
+	.logorodape {
+		height: 20px;
+		width: 20px;
+		font-size: 10px;
+	}
 }
