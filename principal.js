@@ -4,7 +4,8 @@ var listadePalavras = ['ARGELIA','ARGENTINA','ARMENIA','BARBADOS','BELGICA','BEL
 'CARAMBOLA','CUPUAÇU','FRAMBOESA','GOIABA','GUARANA','JABUTICABA','MACADAMIA','MARACUJA','MEXERICA','TAMARINDO','ARROJADO','AJUIZADO','BRILHANTE','BENFEITOR','COMPETENTE',
 'COOPERADOR','CHARMOSO','DESLUMBRANTE','DIPLOMATICO','EXTRAORDINARIO','ENCANTADOR','ENTUSIASMADO','FASCINANTE','GENIAL','HABILIDOSO','INSPIRADOR','INTEGRO',
 'JEITOSO','LETRADO','MAGISTRAL','MODESTO','OBSTINADO','PONDERADO','PERSEVERANTE','RESPEITOSO','TALENTOSO','VENERAVEL','ANDORINHA','AVESTRUZ','BORBOLETA','CAMUNDONGO',
-'CASCAVEL','CROCODILO','DROMEDARIO','ESQUILO','FLAMINGO','GAFANHOTO','GOLFINHO','HIPOPOTAMO','IGUANA','JUMENTO','LAGARTIXA','LESMA','MARIPOSA','MINHOCA','OVELHA','PERNILONGO','RINOCERONTE','TAMANDUA']
+'CASCAVEL','CROCODILO','DROMEDARIO','ESQUILO','FLAMINGO','GAFANHOTO','GOLFINHO','HIPOPOTAMO','IGUANA','JUMENTO','LAGARTIXA','LESMA','MARIPOSA','MINHOCA','OVELHA','PERNILONGO',
+'RINOCERONTE','TAMANDUA']
 
 var listaDicas = ['NOME DE PAÍS','NOME DE PAÍS','NOME DE PAÍS','NOME DE PAÍS','NOME DE PAÍS','NOME DE PAÍS','NOME DE PAÍS','NOME DE PAÍS','NOME DE PAÍS',
 'NOME DE PAÍS','NOME DE PAÍS','NOME DE PAÍS','NOME DE PAÍS','NOME DE PAÍS','NOME DE PAÍS','NOME DE PAÍS','NOME DE PAÍS','NOME DE PAÍS','NOME DE PAÍS',
@@ -33,14 +34,14 @@ let campoSegredo = []
 let ganhou = true
 let vitorias = 0
 let derrotas = 0
-var adicionandoPalavras = document.querySelector(".adicionaPalavra");
+//var adicionandoPalavras = document.querySelector(".adicionaPalavra");
 document.getElementById("telaAdiciona").style.display = "none";
 document.getElementById("ResFinal").style.display = "none";
 
-	// Leitura do teclado da tela de jogo
+// Leitura do teclado da tela de jogo
 teclado = document.querySelectorAll(".teclado")
 
-// Verifica a letra contra a palavraSorteada
+// Verifica a letra jogada contra a palavraSorteada
 teclado.forEach(letra => {
 	letra.addEventListener("click", function () {
 	if (jogando == true) {
@@ -49,8 +50,9 @@ teclado.forEach(letra => {
 	    var letraEntrada = letra.value;
 	    console.log(letraEntrada)
 	    console.log(tamanhodaPalavra)
-	    if (soletraPalavra.includes(letraEntrada)) { //letra escolhida está na palavra, acerto!
-	    	//Procurando os lugares certos
+	    //Testando a letra escolhida pelo jogador
+	    if (soletraPalavra.includes(letraEntrada)) { // se letra escolhida está na palavra, acerto!
+	    	//Procurando os lugares certos no array soletraPalavra e inserindo no array campoSegredo
 	    	for (let i=0; i<tamanhodaPalavra; i++) {					
 					if (soletraPalavra[i] == letraEntrada) {
 						campoSegredo[i] = letraEntrada
@@ -58,7 +60,6 @@ teclado.forEach(letra => {
 	            		acertouLetra()
 					}
 			}
-				
 	    } else { //letra escolhida não está na palavra, erro!
 	            letrasErradas.push(letraEntrada)
 	            errouLetra(letraEntrada)
@@ -80,7 +81,8 @@ function inicializar() {
 	palavraSorteada = sorteiaPalavra()
 	soletraPalavra = palavraSorteada.split("") // separando letra por letra
 	tamanhodaPalavra = palavraSorteada.length //quantidade de letras
-	dicaPalavra = listaDicas[listadePalavras.indexOf(palavraSorteada)] // pega a posição sorteada na listaPalavras e seleciona a mesma para dicas e busca
+	// pega a posição sorteada na listaPalavras e seleciona a mesma para dicas e busca
+	dicaPalavra = listaDicas[listadePalavras.indexOf(palavraSorteada)] 
 	console.log(palavraSorteada)
 	console.log(dicaPalavra)
 	console.log(soletraPalavra)
@@ -90,15 +92,27 @@ function inicializar() {
 	tec.textContent = ""
 	
 	campoSegredo = []
-	// Cria array contendo sequencia de traços do tamanho da palavra secreta
+
+	var tabuleiro = document.querySelector(".palavraSecreta");
+	tabuleiro.textContent = ""
+	
 	for (let i=0; i<tamanhodaPalavra; i++) {
-			campoSegredo[i] = "_"
-			// voltar cor do teclado da tela e reabilitar teclas
-			teclado = document.querySelectorAll(".teclado")
-			teclado.forEach(letra => {
-		    letra.style.setProperty("background", "orangered")
-		    letra.disabled = false
-			})	
+		// Cria array contendo sequencia de traços do tamanho da palavra secreta
+		campoSegredo[i] = "_"
+
+		// cria campos com traços na tela
+		var h2 = document.createElement("h2");
+		h2.classList.add("letrajogada")
+		h2.textContent = "_"
+		var div = document.querySelector(".palavraSecreta")
+		div.appendChild(h2)
+
+		// voltar cor do teclado da tela e reabilita teclas
+		teclado = document.querySelectorAll(".teclado")
+		teclado.forEach(letra => {
+	    letra.style.setProperty("background", "orangered")
+	    letra.disabled = false
+		})	
 	}
 	jogarForca()	
 }
@@ -108,22 +122,12 @@ function jogarForca() {
 	document.getElementById("imagem").src = "img/forcacaveira4.png"
 	document.getElementById("telaAdiciona").style.display = "none";
 	document.getElementById("ResFinal").style.display = "none";
-	// apaga os traços 
-	var tabuleiro = document.querySelector(".palavraSecreta");
-	tabuleiro.textContent = ""
-	soletraPalavra.forEach(letra => {
-		var h2 = document.createElement("h2");
-		h2.classList.add("letrajogada")
-		h2.textContent = "_"
-		var div = document.querySelector(".palavraSecreta")
-		div.appendChild(h2)
-	})
-
+	
 	var h1 = document.querySelector("#texdica")
 	h1.textContent = "Dica: " + dicaPalavra
 	
 	jogando=true
-	return jogando
+
 }
 
 function verificaJogo() {
@@ -136,11 +140,11 @@ function verificaJogo() {
 		// apaga os traços 
 		var tabuleiro = document.querySelector(".palavraSecreta");
 		tabuleiro.textContent = ""
-		
+		// mostra a palavra sorteada
 		var h2 = document.createElement("h2");
 		h2.classList.add("letrajogada");
 		h2.textContent = palavraSorteada;
-		
+		// mostra imagem 
 		var div = document.querySelector(".palavraSecreta");
 		div.appendChild(h2);
 		document.getElementById("imagem").src = "img/forcacaveira10b.png"
@@ -153,25 +157,15 @@ function verificaJogo() {
 		vitorias = vitorias + 1
 		ganhou = true;
 		ResFinal(ganhou)
-		/*var h2 = document.createElement("h2");
-		h2.classList.add("titulo");
-		h2.textContent = "Parabéns. Você ganhou!!";
-		var div = document.querySelector(".palavraSecreta");
-		div.appendChild(h2);*/
-
-		console.log("Você venceu. Parabéns!");
 		jogando = false;
-
 	}
 }   
 
 function acertouLetra() {
 	//apaga tudo no campoSegredo
-	var apagaLetra = document.querySelector(".palavraSecreta")
-	console.log(apagaLetra)
-	apagaLetra.textContent = ""
-	//console.log(campoSegredo)
-	
+	var apagaCampo = document.querySelector(".palavraSecreta")
+	apagaCampo.textContent = ""
+	// escreve na tela tudo que está no array campoSegredo
 	campoSegredo.forEach(letra => {
 		var h2 = document.createElement("h2");
 		h2.classList.add("letrajogada")
@@ -183,23 +177,22 @@ function acertouLetra() {
 
 function errouLetra(letraEntrada) {
 
-	if (contaErros ==0) {
-		var h1 = document.createElement("h2");
-		h1.style.setProperty("background", "orangered")
-		//h1.style.setProperty("border", "2px solid")
-		h1.classList.add("letrasErradas")
-		h1.textContent = "Erros:"
+	if (contaErros == 0) {
+		var h2 = document.createElement("h2");
+		h2.style.setProperty("background", "orangered")
+		h2.classList.add("letrasErradas")
+		h2.textContent = "Erros:"
 		var div = document.querySelector(".resultaErros")
-		div.appendChild(h1)
+		div.appendChild(h2)
 	}
 
-	var h1 = document.createElement("h2");
-	h1.style.setProperty("background", "orangered")
-	h1.style.setProperty("border", "2px solid")
-	h1.classList.add("letrasErradas")
-	h1.textContent = letraEntrada
+	var h2 = document.createElement("h2");
+	h2.style.setProperty("background", "orangered")
+	h2.style.setProperty("border", "2px solid")
+	h2.classList.add("letrasErradas")
+	h2.textContent = letraEntrada
 	var div = document.querySelector(".resultaErros")
-	div.appendChild(h1)
+	div.appendChild(h2)
 }
 
 function ResFinal(){
@@ -209,7 +202,7 @@ function ResFinal(){
 	if (ganhou == false) {
 		msg.textContent = "Fim de Jogo!" + " Vitorias: " + vitorias + " Derrotas: " + derrotas
 	} else {
-		msg.textContent = "Parabéns, você ganhou!" +  " Vitorias: " + vitorias + " Derrotas: " + derrotas
+		msg.textContent = "Parabéns, você ganhou!" + " Vitorias: " + vitorias + " Derrotas: " + derrotas
 		console.log("xi")
 	}
 }
