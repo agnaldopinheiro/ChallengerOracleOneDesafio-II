@@ -338,13 +338,13 @@ footer {
   		flex-wrap: wrap;
   		align-content: center;
   		row-gap: 5px;
-  		column-gap: 5px;
+  		column-gap: 2px;
   		margin: 5px;
 	}
 
 	.teclado {
-		height: 26px;
-		width: 26px;
+		height: 23px;
+		width: 24px;
 		font-size: 16px;
 		border-radius: 4px;
 	}
@@ -353,6 +353,8 @@ footer {
 		
 		border-radius: 6px;
 		font-size: 20px;
+		height: 30px;
+		width: 142px;
 	}
 
 	.adicionaPalavra {
